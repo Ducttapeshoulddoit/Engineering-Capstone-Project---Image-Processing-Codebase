@@ -45,7 +45,7 @@ def create_animation(folder_path, interval=100):
 
 if __name__ == "__main__":
     
-    folder_path = "sample packets"
+    folder_path = "Prototyping/sample packets"
     frame_interval = 200
     
     create_animation(folder_path, frame_interval)
