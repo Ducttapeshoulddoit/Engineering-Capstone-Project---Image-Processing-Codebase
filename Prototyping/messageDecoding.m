@@ -1,6 +1,10 @@
+clear;
+clc;
+%%
 % Reading Processed Images Encrypted Message
 % This script will run to decode a grayscale or BW image to deocde the
 % message 
+close all
 message = imread("frame 28.png");
 figure;
 subplot(1,2,1);
@@ -21,9 +25,16 @@ figure
 subplot(1,2,1), imshow(stretched_img2), title('Min-Max Stretched');
 subplot(1,2,2), imhist(stretched_img2)
 
-p = polyfit(x,y,2);
+% binLocations is my x and counts is y values of the histogram
+[count, binLocations] = imhist(stretched_img2);
 
-%%
-BW=imbinarize(stretched_img2);
-figure
-imshow(BW)
+p = polyfit(binLocations, count, 2);
+
+x_range = 0:255;
+y_fit = polyval(p, x_range);
+
+
+figure;
+plot(binLocations, count)
+hold on;
+plot(x_range,y_fit)
