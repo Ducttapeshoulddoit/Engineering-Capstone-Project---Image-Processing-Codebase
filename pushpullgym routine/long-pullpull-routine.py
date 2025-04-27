@@ -1,0 +1,5 @@
+print(' Warm up - 2x10 incline pushups followed by two sets of dips ')
+print('1. Bench press 2 X 6')
+print('2. Incline bench 2 x 6')
+print('3. cable flys  ')
+print('3. Dumbell Latts 3 x 5  ')
