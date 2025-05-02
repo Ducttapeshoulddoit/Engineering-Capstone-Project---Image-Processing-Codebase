@@ -3,11 +3,14 @@
 % Finding the circle area ROI for fruther image processing
 % detect circle objectcs -> mask -> segment -> prep image for processing
 
-image = imread("2025-Sem1/Capstone A/MATLAB" + ...
-    "/images/Test images 10kHz transmission/_DSF0190.JPG");
+filterspec = {'*.jpg;*.tif;*.png;*.gif','All Image Files'};
+[file,path] = uigetfile(filterspec);
 
- % image = imread("2025-Sem1/Capstone A/MATLAB" + ...
- %     "/images/1kHz.jpg");
+imagefile = [path file];
+
+
+image = imread(imagefile);
+
 
 % Check the image is linear or SRGB - maybe later
 
@@ -140,5 +143,5 @@ subplot(1,3,1); imshow(roi_image); title('ROI - Original');
 subplot(1,3,2); imshow(roi_GS); title('ROI - Grayscale');
 subplot(1,3,3); imshow(roi_BW); title('ROI - Binary');
 
-imwrite(roi_image,"2025-Sem1/Capstone A/MATLAB/roi_image.jpg");
+%imwrite(roi_image,"2025-Sem1/Capstone A/MATLAB/roi_image.jpg");
 
