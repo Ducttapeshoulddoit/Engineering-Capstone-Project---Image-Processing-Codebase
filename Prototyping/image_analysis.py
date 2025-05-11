@@ -7,7 +7,7 @@ from skimage.measure import label, regionprops
 from skimage.segmentation import clear_border
 
 # Read the image
-image_bgr = cv2.imread('Prototyping/8000_2.jpg')  # Replace with your image path
+image_bgr = cv2.imread('Prototyping/8000_1.jpg')  # Replace with your image path
 image = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
