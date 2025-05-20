@@ -64,10 +64,17 @@ end
 title('Image with Boundaries');
 
 
-% After your existing boundary plotting code, add this:
+% After the existing boundary are found
 % Find the extreme points across ALL boundaries to form one bounding box
+% so the min/max of the row of coloumsn
+%             min row
+%              __
+%     min col |__| max col
+%
+%            max row 
+% 
 
-% Initialize with extreme values
+% Initialize with extreme values of the regions
 min_row = inf;
 max_row = 0;
 min_col = inf;
@@ -143,5 +150,5 @@ subplot(1,3,1); imshow(roi_image); title('ROI - Original');
 subplot(1,3,2); imshow(roi_GS); title('ROI - Grayscale');
 subplot(1,3,3); imshow(roi_BW); title('ROI - Binary');
 
-%imwrite(roi_image,"2025-Sem1/Capstone A/MATLAB/roi_image.jpg");
+imwrite(roi_image,"roi_image4.jpg");
 
